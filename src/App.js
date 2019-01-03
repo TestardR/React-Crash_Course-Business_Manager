@@ -1,25 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import Projects from './Components/Projects';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      projects: [
+        {
+          title: 'Business Website',
+          category: 'Web Design'
+        },
+        {
+          title: 'Social App',
+          category: 'Mobile Development'
+        },
+        {
+          title: 'Ecommerce Shopping Cart',
+          category: 'Web Development'
+        }
+      ]
+    };
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        My App
+        <Projects projects={this.state.projects} />
       </div>
     );
   }
